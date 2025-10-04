@@ -20,9 +20,18 @@
     <section id="events">
       <h2>Events in Action</h2>
       <!-- you can also write as add, remove instead of add(), remove() -->
-      <button v-on:click="add()">Add</button>
-      <button v-on:click="remove()">Remove</button>
+      <button v-on:click="add(5)">Add 5</button>
+      <!-- .right modifier triggers only on right-click -->
+      <button v-on:click.right="remove(3)">Remove 3</button>
       <p>Result: {{ counter }}</p>
+      <!-- $event is a special Vue keyword to pass the event object -->
+      <input type="text" v-on:input="setName($event, 'Mikado')" v-on:keyup.enter="confirmInput">
+      <p>Your Name: {{ confirmedName }}</p>
+      <!-- .prevent is a Vue event modifier that calls preventDefault() automatically -->
+      <form v-on:submit.prevent="submitForm">
+        <input typ="input">
+        <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>
