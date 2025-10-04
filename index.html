@@ -9,7 +9,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- when writing in head, need to add defer -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -18,8 +19,9 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click="counter++">Add</button>
-      <button v-on:click="counter = counter - 1">Remove</button>
+      <!-- you can also write as add, remove instead of add(), remove() -->
+      <button v-on:click="add()">Add</button>
+      <button v-on:click="remove()">Remove</button>
       <p>Result: {{ counter }}</p>
     </section>
   </body>
