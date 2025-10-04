@@ -23,6 +23,7 @@
       <button v-on:click="add(5)">Add 5</button>
       <!-- .right modifier triggers only on right-click -->
       <button v-on:click.right="remove(3)">Remove 3</button>
+      <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
       <!-- $event is a special Vue keyword to pass the event object -->
       <input type="text" v-on:input="setName($event, 'Mikado')" v-on:keyup.enter="confirmInput">
